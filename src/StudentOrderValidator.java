@@ -1,23 +1,50 @@
+/**
+ * 
+ */
 public class StudentOrderValidator {
     public static void main(String[] args) {
-            checkAll();
+        checkAll();
     }
+
     static void checkAll() {
-        checkCityRegister();
-        checkWeddingProcess();
-        checkStudent();
-        chechChildren();
+        StudentOrder so = readStudentOrder();
+
+        AswerCityRegister cityAnswer = checkCityRegister(so);
+        AnswerWedding wedAnswer = checkWeddingProcess(so);
+        AnswerChildren childAnswer = checkChildren(so);
+        AnswerStudent studentAnswer = checkStudent(so);
+
+
+        sendMail(so);
     }
-    static void checkCityRegister() {
+
+    static StudentOrder readStudentOrder() {
+        StudentOrder so = new StudentOrder();
+        return so;
+    }
+
+    static AswerCityRegister checkCityRegister(StudentOrder so) {
         System.out.println("Проверка в городском реестре населения");
+        return new AswerCityRegister();
     }
-    static void checkWeddingProcess() {
+
+    static AnswerWedding checkWeddingProcess(StudentOrder so) {
         System.out.println("Проверка на статус семейного положения");
+        return new AnswerWedding();
+
     }
-    static void chechChildren() {
+
+    static AnswerChildren checkChildren(StudentOrder so) {
         System.out.println("Проверка на наличие детей");
+        return new AnswerChildren();
     }
-    static void checkStudent() {
+
+    static AnswerStudent checkStudent(StudentOrder so) {
         System.out.println("Проверка, что является студентом");
+        return new AnswerStudent();
+    }
+
+    static void sendMail(StudentOrder so) {
+
     }
 }

@@ -20,7 +20,8 @@ public class StudentOrderValidator {
 
                 AswerCityRegister cityAnswer = checkCityRegister(so);
             if (!cityAnswer.success) {
-                continue;
+//                continue;
+                break;
             }
                 AnswerWedding wedAnswer = checkWeddingProcess(so);
                 AnswerChildren childAnswer = checkChildren(so);
@@ -36,26 +37,30 @@ public class StudentOrderValidator {
     }
 
     static AswerCityRegister checkCityRegister(StudentOrder so) {
-        System.out.println("Проверка в городском реестре населения");
-        AswerCityRegister rsl = new AswerCityRegister();
-        rsl.success = false;
-        return rsl;
+        CityRegisterValidator crv1 = new CityRegisterValidator();
+        crv1.hostName = "HostOne";
+        crv1.login = "Alex";
+        crv1.password = 222;
+        CityRegisterValidator crv2 = new CityRegisterValidator();
+        crv2.hostName = "HostTwo";
+        crv2.login = "Marsic";
+        crv2.password = 333;
+        AswerCityRegister ans1 = crv1.checkCityRegister(so);
+        AswerCityRegister ans2 = crv2.checkCityRegister(so);
+       return ans1;
     }
 
     static AnswerWedding checkWeddingProcess(StudentOrder so) {
-        System.out.println("Проверка на статус семейного положения");
-        return new AnswerWedding();
+        return AnswerWeddingValidator.checkWeddingProcess(so);
 
     }
 
     static AnswerChildren checkChildren(StudentOrder so) {
-        System.out.println("Проверка на наличие детей");
-        return new AnswerChildren();
+        return AnswerChildrenValidator.checkChildren(so);
     }
 
     static AnswerStudent checkStudent(StudentOrder so) {
-        System.out.println("Проверка, что является студентом");
-        return new AnswerStudent();
+        return AnswerStudentValidator.checkStudent(so);
     }
 
     static void sendMail(StudentOrder so) {

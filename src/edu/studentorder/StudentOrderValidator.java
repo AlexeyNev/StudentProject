@@ -1,5 +1,18 @@
+package edu.studentorder;
+
+
+import edu.studentorder.domain.*;
+import edu.studentorder.mail.MailSender;
+import edu.studentorder.validator.ChildrenValidator;
+import edu.studentorder.validator.CityRegisterValidator;
+import edu.studentorder.validator.StudentValidator;
+import edu.studentorder.validator.WeddingValidator;
+
 /**
- *
+ *  edu.studentorder.validator.ChildrenValidator ch = new edu.studentorder.validator.ChildrenValidator();
+ *         return ch.checkChildren(so);
+ *         аналогия записи
+ *         return new edu.studentorder.validator.StudentValidator().checkStudent(so);
  */
 public class StudentOrderValidator {
     public static void main(String[] args) {
@@ -39,11 +52,9 @@ public class StudentOrderValidator {
     static AswerCityRegister checkCityRegister(StudentOrder so) {
         CityRegisterValidator crv1 = new CityRegisterValidator();
         crv1.hostName = "HostOne";
-        crv1.login = "Alex";
         crv1.password = 222;
         CityRegisterValidator crv2 = new CityRegisterValidator();
         crv2.hostName = "HostTwo";
-        crv2.login = "Marsic";
         crv2.password = 333;
         AswerCityRegister ans1 = crv1.checkCityRegister(so);
         AswerCityRegister ans2 = crv2.checkCityRegister(so);
@@ -51,19 +62,21 @@ public class StudentOrderValidator {
     }
 
     static AnswerWedding checkWeddingProcess(StudentOrder so) {
-        return AnswerWeddingValidator.checkWeddingProcess(so);
+        WeddingValidator wd = new WeddingValidator();
+        return wd.checkWeddingProcess(so);
 
     }
 
     static AnswerChildren checkChildren(StudentOrder so) {
-        return AnswerChildrenValidator.checkChildren(so);
+        ChildrenValidator ch = new ChildrenValidator();
+        return ch.checkChildren(so);
     }
 
     static AnswerStudent checkStudent(StudentOrder so) {
-        return AnswerStudentValidator.checkStudent(so);
+        return new StudentValidator().checkStudent(so);
     }
 
     static void sendMail(StudentOrder so) {
-        System.out.println("Почта отправлена");
+        new MailSender().sendMail(so);
     }
 }

@@ -5,10 +5,11 @@ import edu.studentorder.domain.StudentOrder;
 
 public class SaveStudentOrder {
     public static void main(String[] args) {
-        StudentOrder so = new StudentOrder();
+        buildStudentOrder();
 
-        long ans = saveStudentOrder(so);
-        System.out.println(ans);
+//        StudentOrder so = new StudentOrder();
+//        long ans = saveStudentOrder(so);
+//        System.out.println(ans);
     }
     static long saveStudentOrder(StudentOrder marsik) {
         long answer = 199;
@@ -21,7 +22,12 @@ public class SaveStudentOrder {
         StudentOrder so = new StudentOrder();
         AdultHuman husband = new AdultHuman();
         husband.setGivenName("Alexey");
+        husband.setSurName("Nevredimov");
+        husband.setPassportNumber("33");
         so.setHusband(husband);
+
+        String ans = husband.getPersonString();
+        System.out.println(ans);
         return so;
     }
 }

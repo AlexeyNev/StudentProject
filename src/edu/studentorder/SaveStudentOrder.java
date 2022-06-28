@@ -27,8 +27,10 @@ public class SaveStudentOrder {
 
     static StudentOrder buildStudentOrder() {
         StudentOrder so = new StudentOrder();
+
         AdultHuman husband = new AdultHuman();
-        System.out.println(husband.getSurName());
+
+
 //        husband.setGivenName("Alexey");
 //        husband.setSurName("Nevredimov");
 //        husband.setPassportNumber("33");

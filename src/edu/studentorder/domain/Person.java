@@ -1,4 +1,7 @@
 package edu.studentorder.domain;
+/**
+ * protected - зона видимости только родительских классов. Поля protected видят только "Родственники"
+ */
 
 import java.time.LocalDate;
 

@@ -1,5 +1,7 @@
 package edu.studentorder.domain;
 
+import edu.studentorder.domain.other.AdultHuman;
+
 public class StudentOrder {
     private long studentOrderId;
     private AdultHuman husband;

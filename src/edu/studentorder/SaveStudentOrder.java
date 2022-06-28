@@ -1,6 +1,6 @@
 package edu.studentorder;
 
-import edu.studentorder.domain.AdultHuman;
+import edu.studentorder.domain.other.AdultHuman;
 import edu.studentorder.domain.StudentOrder;
 
 public class SaveStudentOrder {

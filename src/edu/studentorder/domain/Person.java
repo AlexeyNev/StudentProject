@@ -5,7 +5,7 @@ package edu.studentorder.domain;
 
 import java.time.LocalDate;
 
-public class Person {
+public abstract class Person {
     protected String surName;
     protected String givenName;
     private String patronymic;

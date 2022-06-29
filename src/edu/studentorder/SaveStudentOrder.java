@@ -5,8 +5,12 @@ package edu.studentorder;
  * Оно не умеет возвращать значение (public Person())
  * Имеет имя которое полностью совпадает с именем класса
  *
+ * abstract - класс, который Вы объявили, не позволяет Вам создавать объект этого класса
+ * (нельзя будет создать объект)
+ *
  */
 
+import edu.studentorder.domain.Person;
 import edu.studentorder.domain.other.AdultHuman;
 import edu.studentorder.domain.StudentOrder;
 

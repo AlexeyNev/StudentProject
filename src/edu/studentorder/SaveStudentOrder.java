@@ -16,7 +16,6 @@ import edu.studentorder.domain.StudentOrder;
 
 public class SaveStudentOrder {
     public static void main(String[] args) {
-        buildStudentOrder();
 
 //        StudentOrder so = new StudentOrder();
 //        long ans = saveStudentOrder(so);
@@ -29,19 +28,9 @@ public class SaveStudentOrder {
         return answer;
     }
 
-    static StudentOrder buildStudentOrder() {
+    static StudentOrder buildStudentOrder(long id) {
         StudentOrder so = new StudentOrder();
-
-        AdultHuman husband = new AdultHuman();
-
-
-//        husband.setGivenName("Alexey");
-//        husband.setSurName("Nevredimov");
-//        husband.setPassportNumber("33");
-//        so.setHusband(husband);
-
-        String ans = husband.getPersonString();
-        System.out.println(ans);
+        so.setStudentOrderId(id);
         return so;
     }
 }

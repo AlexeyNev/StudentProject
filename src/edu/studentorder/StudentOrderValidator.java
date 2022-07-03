@@ -13,6 +13,12 @@ import edu.studentorder.validator.WeddingValidator;
  * return ch.checkChildren(so);
  * аналогия записи
  * return new edu.studentorder.validator.StudentValidator().checkStudent(so);
+ *
+ * forEach - цикл, в котором берем каждый элемент цикла и вставляем его в переменную
+ * for(StudentOrder so : soArray) { каждый элемент из массива soArray
+ *     System.out.println();   вставляем в переменную so
+ *     checkOneOrder(so);
+ * }
  */
 
 public class StudentOrderValidator {

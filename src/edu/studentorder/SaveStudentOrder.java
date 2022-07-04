@@ -8,8 +8,12 @@ package edu.studentorder;
  * abstract - класс, который Вы объявили, не позволяет Вам создавать объект этого класса
  * (нельзя будет создать объект)
  *
+ * garbage collector - механизм, который удаляет объекты на которые не идут ссылки, т.е механизм считает такой объект не активным.
+ * поэтому стоит задумываться, создавать ли новые объекты или можно обойтись уже существующими.
  */
 
+import edu.studentorder.domain.Adress;
+import edu.studentorder.domain.Child;
 import edu.studentorder.domain.Person;
 import edu.studentorder.domain.other.AdultHuman;
 import edu.studentorder.domain.StudentOrder;
@@ -31,6 +35,9 @@ public class SaveStudentOrder {
     static StudentOrder buildStudentOrder(long id) {
         StudentOrder so = new StudentOrder();
         so.setStudentOrderId(id);
+
+        AdultHuman man = new AdultHuman("Васильев", "Андрей", "Петрович", null);
+
         return so;
     }
 }

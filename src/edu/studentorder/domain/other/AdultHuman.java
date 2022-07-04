@@ -1,10 +1,20 @@
 package edu.studentorder.domain.other;
 
 import edu.studentorder.domain.Person;
-
 import java.time.LocalDate;
 
+/**
+ * Super - метод вызова родителя. Он нужен для вызова конструктора суперкласса (super(список_параметров_конструктора)),
+ * для вызова метода суперкласса (super.название_метода(список_параметров_метода));
+ * Override - переопределение метода родителя
+ * Overload - использование одного имени для нескольких методов с разными параметрами
+ *
+ * ЗАЧЕМ НУЖНЫ ОДИНАКОВЫЕ ИМЕНА И РАЗНЫЕ НАБОРЫ ПАРАМЕТРОВ? - для удобства
+ *
+ */
+
 public class AdultHuman extends Person {
+
     private String passportSeria;
     private String passportNumber;
     private LocalDate issueDate;
@@ -12,9 +22,11 @@ public class AdultHuman extends Person {
     private String university;
     private String studentId;
 
-    public String getPersonString() {
-        return surName + " " + givenName + " : " + passportNumber;
+    public AdultHuman(String surName, String givenName, String patronymic, LocalDate dateOfBirth) {
+        super(surName, givenName, patronymic, dateOfBirth);
     }
+
+
 
     public String getPassportSeria() {
         return passportSeria;

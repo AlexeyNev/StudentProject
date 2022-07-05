@@ -21,6 +21,33 @@ public class AdultHuman extends Person {
     private String issueDepartment;
     private String university;
     private String studentId;
+    private String MarriageCertificateId;
+    private String MarriageDate;
+    private String MarriageOffice;
+
+    public String getMarriageCertificateId() {
+        return MarriageCertificateId;
+    }
+
+    public void setMarriageCertificateId(String marriageCertificateId) {
+        MarriageCertificateId = marriageCertificateId;
+    }
+
+    public String getMarriageDate() {
+        return MarriageDate;
+    }
+
+    public void setMarriageDate(String marriageDate) {
+        MarriageDate = marriageDate;
+    }
+
+    public String getMarriageOffice() {
+        return MarriageOffice;
+    }
+
+    public void setMarriageOffice(String marriageOffice) {
+        MarriageOffice = marriageOffice;
+    }
 
     public AdultHuman(String surName, String givenName, String patronymic, LocalDate dateOfBirth) {
         super(surName, givenName, patronymic, dateOfBirth);

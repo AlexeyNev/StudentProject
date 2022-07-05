@@ -14,11 +14,6 @@ import edu.studentorder.exception.CityRegisterException;
 
 public class CityRegisterValidator {
 
-    public String hostName;
-    protected int port;
-    private String login;
-    public int password;
-
     private CityRegisterChecker personChecker;
 
     public CityRegisterValidator() {

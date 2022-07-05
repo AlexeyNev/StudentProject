@@ -12,19 +12,10 @@ package edu.studentorder;
  * поэтому стоит задумываться, создавать ли новые объекты или можно обойтись уже существующими.
  */
 
-import edu.studentorder.domain.Adress;
-import edu.studentorder.domain.Child;
-import edu.studentorder.domain.Person;
-import edu.studentorder.domain.other.AdultHuman;
 import edu.studentorder.domain.StudentOrder;
 
 public class SaveStudentOrder {
-    public static void main(String[] args) {
 
-//        StudentOrder so = new StudentOrder();
-//        long ans = saveStudentOrder(so);
-//        System.out.println(ans);
-    }
     static long saveStudentOrder(StudentOrder marsik) {
         long answer = 199;
         System.out.println("saveStudentOrder: ");
@@ -32,11 +23,11 @@ public class SaveStudentOrder {
         return answer;
     }
 
-    static StudentOrder buildStudentOrder(long id) {
+    public static StudentOrder buildStudentOrder(long id) {
         StudentOrder so = new StudentOrder();
         so.setStudentOrderId(id);
 
-        AdultHuman man = new AdultHuman("Васильев", "Андрей", "Петрович", null);
+
 
         return so;
     }

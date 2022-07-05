@@ -17,6 +17,7 @@ public abstract class Person {
         this.givenName = givenName;
         this.patronymic = patronymic;
         this.dateOfBirth = dateOfBirth;
+
     }
 
 

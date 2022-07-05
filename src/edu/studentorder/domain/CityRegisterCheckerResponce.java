@@ -28,4 +28,12 @@ public class CityRegisterCheckerResponce {
     public void setTemporal(Boolean temporal) {
         this.temporal = temporal;
     }
+
+    @Override
+    public String toString() {
+        return "CityRegisterCheckerResponce{" +
+                "existing=" + existing +
+                ", temporal=" + temporal +
+                '}';
+    }
 }

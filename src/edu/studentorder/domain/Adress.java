@@ -1,16 +1,22 @@
 package edu.studentorder.domain;
 
-import java.time.LocalDate;
 
-public class Adress extends Person {
+public class Adress {
     private String postCode;
     private String street;
     private String building;
     private String extension;
     private String apartment;
 
-    public Adress(String surName, String givenName, String patronymic, LocalDate dateOfBirth) {
-        super(surName, givenName, patronymic, dateOfBirth);
+    public Adress() {
+    }
+
+    public Adress(String postCode, String street, String building, String extension, String apartment) {
+        this.postCode = postCode;
+        this.street = street;
+        this.building = building;
+        this.extension = extension;
+        this.apartment = apartment;
     }
 
     public String getStreet() {

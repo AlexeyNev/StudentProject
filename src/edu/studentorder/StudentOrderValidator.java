@@ -8,6 +8,7 @@ import edu.studentorder.validator.CityRegisterValidator;
 import edu.studentorder.validator.StudentValidator;
 import edu.studentorder.validator.WeddingValidator;
 
+
 /**
  * edu.studentorder.validator.ChildrenValidator ch = new edu.studentorder.validator.ChildrenValidator();
  * return ch.checkChildren(so);
@@ -63,11 +64,15 @@ public class StudentOrderValidator {
 
     public void checkOneOrder(StudentOrder so) {
         AswerCityRegister cityAnswer = checkCityRegister(so);
-        AnswerWedding wedAnswer = checkWeddingProcess(so);
-        AnswerChildren childAnswer = checkChildren(so);
-        AnswerStudent studentAnswer = checkStudent(so);
+//        AnswerWedding wedAnswer = checkWedding(so);
+//        AnswerChildren childAnswer = checkChildren(so);
+//        AnswerStudent studentAnswer = checkStudent(so);
+//
+//        sendMail(so);
+    }
 
-        sendMail(so);
+    private AnswerWedding checkWedding(StudentOrder so) {
+        return null;
     }
 
     public AswerCityRegister checkCityRegister(StudentOrder so) {

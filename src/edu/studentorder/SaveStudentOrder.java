@@ -4,30 +4,71 @@ package edu.studentorder;
  * но эта конструкция обладает неким особенным построением.
  * Оно не умеет возвращать значение (public Person())
  * Имеет имя которое полностью совпадает с именем класса
- *
+ * <p>
  * abstract - класс, который Вы объявили, не позволяет Вам создавать объект этого класса
  * (нельзя будет создать объект)
- *
+ * <p>
  * garbage collector - механизм, который удаляет объекты на которые не идут ссылки, т.е механизм считает такой объект не активным.
  * поэтому стоит задумываться, создавать ли новые объекты или можно обойтись уже существующими.
  */
 
+import edu.studentorder.domain.Adress;
+import edu.studentorder.domain.other.AdultHuman;
+import edu.studentorder.domain.Child;
+import edu.studentorder.domain.Person;
 import edu.studentorder.domain.StudentOrder;
 
+import java.time.LocalDate;
+
 public class SaveStudentOrder {
+    private static edu.studentorder.domain.Adress Adress;
 
-    static long saveStudentOrder(StudentOrder marsik) {
+    public static void main(String[] args) {
+        StudentOrder s = buildStudentOrder(10);
+
+    }
+
+    static long saveStudentOrder(StudentOrder studentOrder) {
         long answer = 199;
-        System.out.println("saveStudentOrder: ");
-
+        System.out.println("saveStudentOrder");
         return answer;
     }
 
     public static StudentOrder buildStudentOrder(long id) {
         StudentOrder so = new StudentOrder();
         so.setStudentOrderId(id);
+        so.setMarriageCertificateId("" + (123456000 + id));
+        so.setMarriageDate(LocalDate.of(2016, 7, 4));
+        so.setMarriageOffice("Отдел ЗАГС");
+
+        Adress adress = new Adress("195000", "Заневский пр.", "12", "", "142");
 
 
+        AdultHuman husband = new AdultHuman("Петров", "Виктор", "Сергеевич", LocalDate.of(1997, 8, 24));
+        husband.setPassportSeria("" + (1000 + id));
+        husband.setPassportNumber("" + (100000 + id));
+        husband.setIssueDate(LocalDate.of(2017, 9, 15));
+        husband.setIssueDepartment("Отдел милиции №" + id);
+        husband.setStudentId("" + (100000 + id));
+        husband.setAdress(Adress);
+
+        AdultHuman wife = new AdultHuman("Петрова", "Вероника", "Алекссевна", LocalDate.of(1998, 3, 12));
+        wife.setPassportSeria("" + (2000 + id));
+        wife.setPassportNumber("" + (200000 + id));
+        wife.setIssueDate(LocalDate.of(2018, 4, 5));
+        wife.setIssueDepartment("Отдел милиции №" + id);
+        wife.setStudentId("" + (200000 + id));
+        wife.setAdress(Adress);
+
+        Child child = new Child("Петрова", "Ирина", "Викторовна", LocalDate.of(2018, 6, 29));
+        child.setCertificateNumber("" + (300000 + id));
+        child.setIssueDate(LocalDate.of(2018, 7, 19));
+        child.setIssueDepartment("ОТдел ЗАГС №" + id);
+        child.setAdress(Adress);
+
+        so.setHusband(husband);
+        so.setWife(wife);
+        so.setChild(child);
 
         return so;
     }

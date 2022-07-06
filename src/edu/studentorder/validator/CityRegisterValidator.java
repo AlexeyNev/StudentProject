@@ -26,11 +26,11 @@ public class CityRegisterValidator {
             CityRegisterCheckerResponce wans = personChecker.checkPerson(so.getWife());
             CityRegisterCheckerResponce cans = personChecker.checkPerson(so.getChild());
         } catch (CityRegisterException ex) {
-            ex.printStackTrace();
+            ex.printStackTrace(System.out);
         }
 
-        AswerCityRegister rsl = new AswerCityRegister();
-        return rsl;
+        AswerCityRegister ans = new AswerCityRegister();
+        return ans;
     }
 }
 

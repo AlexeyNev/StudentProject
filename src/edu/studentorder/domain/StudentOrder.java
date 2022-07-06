@@ -1,17 +1,32 @@
 package edu.studentorder.domain;
 
 import edu.studentorder.domain.other.AdultHuman;
-
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * private List <Child> children; - объект типа List, у которого внутри будут элементы типа child. Это дженерик
+ */
 
 public class StudentOrder {
     private long studentOrderId;
     private AdultHuman husband;
     private AdultHuman wife;
-    private Child child;
+    private List <Child> children;
     private String marriageCertificateId;
     private String marriageOffice;
     private LocalDate marriageDate;
+
+    public void addChild(Child child) {
+        if (children == null) {
+            children = new ArrayList<>(5);
+        }
+        children.add(child);
+    }
+    public List<Child> getChildren() {
+        return children;
+    }
 
     public long getStudentOrderId() {
         return studentOrderId;
@@ -37,13 +52,7 @@ public class StudentOrder {
         this.wife = wife;
     }
 
-    public Child getChild() {
-        return child;
-    }
 
-    public void setChild(Child child) {
-        this.child = child;
-    }
 
     public String getMarriageCertificateId() {
         return marriageCertificateId;

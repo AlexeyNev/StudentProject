@@ -1,9 +1,12 @@
 package edu.studentorder.validator;
 
 import edu.studentorder.domain.AswerCityRegister;
+import edu.studentorder.domain.Child;
 import edu.studentorder.domain.CityRegisterCheckerResponce;
 import edu.studentorder.domain.StudentOrder;
 import edu.studentorder.exception.CityRegisterException;
+
+import java.util.List;
 
 /**
  * Полиморфизм - если назвать бульдога собакой, он не перестанет быть собакой.
@@ -24,7 +27,12 @@ public class CityRegisterValidator {
         try {
             CityRegisterCheckerResponce hans = personChecker.checkPerson(so.getHusband());
             CityRegisterCheckerResponce wans = personChecker.checkPerson(so.getWife());
-            CityRegisterCheckerResponce cans = personChecker.checkPerson(so.getChild());
+
+            List<Child> children = so.getChildren();
+
+            for (int i = 0; i < children.size(); i++) {
+                CityRegisterCheckerResponce cans = personChecker.checkPerson(so.getChildren().get(i));
+            }
         } catch (CityRegisterException ex) {
             ex.printStackTrace(System.out);
         }

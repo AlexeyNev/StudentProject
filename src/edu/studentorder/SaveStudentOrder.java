@@ -10,6 +10,7 @@ package edu.studentorder;
  * <p>
  * garbage collector - механизм, который удаляет объекты на которые не идут ссылки, т.е механизм считает такой объект не активным.
  * поэтому стоит задумываться, создавать ли новые объекты или можно обойтись уже существующими.
+ * Коллекции - это классы которые позволяют
  */
 
 import edu.studentorder.domain.Adress;
@@ -60,15 +61,22 @@ public class SaveStudentOrder {
         wife.setStudentId("" + (200000 + id));
         wife.setAdress(Adress);
 
-        Child child = new Child("Петрова", "Ирина", "Викторовна", LocalDate.of(2018, 6, 29));
-        child.setCertificateNumber("" + (300000 + id));
-        child.setIssueDate(LocalDate.of(2018, 7, 19));
-        child.setIssueDepartment("ОТдел ЗАГС №" + id);
-        child.setAdress(Adress);
+        Child child1 = new Child("Петрова", "Ирина", "Викторовна", LocalDate.of(2018, 6, 29));
+        child1.setCertificateNumber("" + (300000 + id));
+        child1.setIssueDate(LocalDate.of(2018, 7, 19));
+        child1.setIssueDepartment("Отдел ЗАГС №" + id);
+        child1.setAdress(Adress);
+
+        Child child2 = new Child("Петров", "Марс", "Викторович", LocalDate.of(2018, 6, 28));
+        child2.setCertificateNumber("" + (400000 + id));
+        child2.setIssueDate(LocalDate.of(2018, 7, 19));
+        child2.setIssueDepartment("Отдел ЗАГС №" + id);
+        child2.setAdress(Adress);
 
         so.setHusband(husband);
         so.setWife(wife);
-        so.setChild(child);
+        so.addChild(child1);
+        so.addChild(child2);
 
         return so;
     }

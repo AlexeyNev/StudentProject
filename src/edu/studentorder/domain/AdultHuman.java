@@ -1,4 +1,4 @@
-package edu.studentorder.domain.other;
+package edu.studentorder.domain;
 
 import edu.studentorder.domain.Person;
 import java.time.LocalDate;

@@ -1,9 +1,9 @@
 package edu.studentorder.validator;
 
 import edu.studentorder.domain.Child;
-import edu.studentorder.domain.CityRegisterCheckerResponce;
+import edu.studentorder.domain.register.CityRegisterResponce;
 import edu.studentorder.domain.Person;
-import edu.studentorder.domain.other.AdultHuman;
+import edu.studentorder.domain.AdultHuman;
 import edu.studentorder.exception.CityRegisterException;
 
 /**
@@ -19,10 +19,10 @@ public class FakeCityRegisterChecker implements CityRegisterChecker
     private static final String ERROR_1 = "1002";
     private static final String ERROR_2 = "2002";
 
-    public CityRegisterCheckerResponce checkPerson(Person person)
+    public CityRegisterResponce checkPerson(Person person)
             throws CityRegisterException {
 
-        CityRegisterCheckerResponce res = new CityRegisterCheckerResponce();
+        CityRegisterResponce res = new CityRegisterResponce();
 
         if (person instanceof AdultHuman) {
             AdultHuman t = (AdultHuman) person;

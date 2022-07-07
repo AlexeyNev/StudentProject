@@ -14,10 +14,9 @@ package edu.studentorder;
  */
 
 import edu.studentorder.domain.Adress;
-import edu.studentorder.domain.other.AdultHuman;
 import edu.studentorder.domain.Child;
-import edu.studentorder.domain.Person;
 import edu.studentorder.domain.StudentOrder;
+import edu.studentorder.domain.AdultHuman;
 
 import java.time.LocalDate;
 

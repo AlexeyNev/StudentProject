@@ -1,4 +1,4 @@
-package edu.studentorder.domain;
+package edu.studentorder.domain.register;
 
 /**
  * Boolean - с большой буквы, это класс "обертка", они есть для каждого элементарного типа,
@@ -8,7 +8,7 @@ package edu.studentorder.domain;
  * 1) Это полноценный объект, который может иметь в себе множество информации
  * 2) Возвращается такой объект не с помощью return, а с помощью другого механизма
  */
-public class CityRegisterCheckerResponce {
+public class CityRegisterResponce {
     boolean existing;
     Boolean temporal;
 
@@ -31,7 +31,7 @@ public class CityRegisterCheckerResponce {
 
     @Override
     public String toString() {
-        return "CityRegisterCheckerResponce{" +
+        return "CityRegisterResponce{" +
                 "existing=" + existing +
                 ", temporal=" + temporal +
                 '}';

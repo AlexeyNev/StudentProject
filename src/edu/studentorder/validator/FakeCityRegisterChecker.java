@@ -5,6 +5,7 @@ import edu.studentorder.domain.register.CityRegisterResponce;
 import edu.studentorder.domain.Person;
 import edu.studentorder.domain.AdultHuman;
 import edu.studentorder.exception.CityRegisterException;
+import edu.studentorder.exception.TransportException;
 
 /**
  * final - это константа, которую нельзя менять
@@ -18,9 +19,12 @@ public class FakeCityRegisterChecker implements CityRegisterChecker
     private static final String BAD_2 = "2001";
     private static final String ERROR_1 = "1002";
     private static final String ERROR_2 = "2002";
+    private static final String ERROR_T_1 = "3002";
+    private static final String ERROR_T_2 = "3002";
+
 
     public CityRegisterResponce checkPerson(Person person)
-            throws CityRegisterException {
+            throws CityRegisterException, TransportException {
 
         CityRegisterResponce res = new CityRegisterResponce();
 
@@ -35,7 +39,11 @@ public class FakeCityRegisterChecker implements CityRegisterChecker
                 res.setExisting(false);
             }
             if (ps.equals(ERROR_1) || ps.equals(ERROR_2)) {
-                CityRegisterException ex = new CityRegisterException("Fake ERROR " + ps);
+                CityRegisterException ex = new CityRegisterException("1","GRN ERROR " + ps);
+                throw ex;
+            }
+            if (ps.equals(ERROR_T_1) || ps.equals(ERROR_T_2)) {
+                TransportException ex = new TransportException("TRANSPORT ERROR " + ps);
                 throw ex;
             }
         }

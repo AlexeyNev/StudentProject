@@ -14,6 +14,10 @@ public class AnswerCityRegisterItem {
     private Person person;      // 2) конкретная персона
     private CityStatus status;
 
+    public AnswerCityRegisterItem(CityStatus status, Person person, CityError error) {
+
+    }
+
     public enum CityStatus { // 1) статус ответа
          Yes, No, Error;
     }

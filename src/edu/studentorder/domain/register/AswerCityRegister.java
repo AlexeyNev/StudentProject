@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AswerCityRegister {
+
     private List<AnswerCityRegisterItem> items;
 
     public void addItem(AnswerCityRegisterItem item) {
@@ -14,7 +15,6 @@ public class AswerCityRegister {
     }
 
     public List<AnswerCityRegisterItem> getItems() {
-
         return items;
     }
 }

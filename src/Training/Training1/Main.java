@@ -1,28 +1,41 @@
 package Training.Training1;
 
-import Training.Training1.Bus;
 import Training.Training3.Constructor;
+import Training.Training4.Bus;
+import Training.Training5.Birds;
+import Training.Training5.Straus;
+import Training.Training5.Vorona;
 
 public class Main {
     public static void main(String[] args) {
-        Bus oneBus = new Bus();
-        Bus twoBus = new Bus();
-        Bus threeBus = new Bus();
+//        Bus oneBus = new Bus();
+//        Bus twoBus = new Bus();
+//        Bus threeBus = new Bus();
+//
+//        oneBus.setColor("Yellow");
+//        oneBus.setManySeats(50);
+//        oneBus.setNumberMarshruta(41);
+//
+//        twoBus.setColor("Red");
+//        twoBus.setManySeats(30);
+//        twoBus.setNumberMarshruta(23);
+//
+//        threeBus.setColor("Blue");
+//        threeBus.setManySeats(60);
+//        threeBus.setNumberMarshruta(50);
+//
+//        Constructor constructor = new Constructor();
+//        constructor.foo();
 
-        oneBus.setColor("Yellow");
-        oneBus.setManySeats(50);
-        oneBus.setNumberMarshruta(41);
+//        Bus bus = new Bus();
+//        System.out.println(bus.showM());
+        Straus straus = new Straus();
+        Vorona vorona = new Vorona();
 
-        twoBus.setColor("Red");
-        twoBus.setManySeats(30);
-        twoBus.setNumberMarshruta(23);
 
-        threeBus.setColor("Blue");
-        threeBus.setManySeats(60);
-        threeBus.setNumberMarshruta(50);
-
-        Constructor constructor = new Constructor();
-        constructor.foo();
+        straus.setName("Страус");
+        Birds ptiza = new Straus();
+        Birds ptiza1 = new Vorona();
 
     }
 }

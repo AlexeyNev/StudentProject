@@ -11,5 +11,6 @@ public class Constructor {
         pion.setName("Пион");
 
         System.out.println(rose.getColor() + " " + rose.getName()  + " "+ "и" + " " + pion.getColor() + " " + pion.getName());
+
     }
 }

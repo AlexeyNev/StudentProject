@@ -4,6 +4,7 @@ import Training.Training3.Constructor;
 import Training.Training4.Bus;
 import Training.Training5.Birds;
 import Training.Training5.Straus;
+import Training.Training5.Tesst;
 import Training.Training5.Vorona;
 
 public class Main {
@@ -29,13 +30,14 @@ public class Main {
 
 //        Bus bus = new Bus();
 //        System.out.println(bus.showM());
-        Straus straus = new Straus();
-        Vorona vorona = new Vorona();
+//        Straus straus = new Straus();
+//        straus.setName("Страус");
+//        straus.walk();
 
+        Birds straus2 = new Straus();
+        Birds voron = new Vorona();
 
-        straus.setName("Страус");
-        Birds ptiza = new Straus();
-        Birds ptiza1 = new Vorona();
-
+        Tesst tesst = new Tesst();
+        tesst.foo(voron);
     }
 }

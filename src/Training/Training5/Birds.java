@@ -1,31 +1,21 @@
 package Training.Training5;
 
+/**
+ * Полиморфизм(динамический) - переопределение методов! Метод тот же но с изменениями
+ */
 public class Birds {
-    private String name;
-    private Wings wings;
 
-    public Birds(String name, Wings wings) {
-        this.name = name;
-        this.wings = wings;
-    }
+    private String name;
 
     public void walk() {
         System.out.println("Птица гуляет");
     }
 
-    public String getName(String name) {
+    public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Wings getWings() {
-        return wings;
-    }
-
-    public void setWings(Wings wings) {
-        this.wings = wings;
     }
 }

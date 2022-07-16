@@ -31,11 +31,22 @@ public class Main {
 //        straus.setName("Страус");
 //        straus.walk();
 
-        Birds straus2 = new Straus();
-        Birds voron = new Vorona();
-        Birds sova = new Sova();
+//        Birds straus2 = new Straus();
+//        Birds voron = new Vorona();
+//        Birds sova = new Sova();
+//        Birds sovushka = new Sova();
+//
+//        Tesst tesst = new Tesst();
+//        tesst.foo(voron);
 
-        Tesst tesst = new Tesst();
-        tesst.foo(sova);
+        PremiumCar bmw = new Bmw();
+        PremiumCar mers = new Mers();
+        PremiumCar audi = new Audi();
+        PremiumCar car = new PremiumCar();
+
+        Cars cars = new Cars();
+        cars.rsl(car);
+        cars.rsl(mers);
+        cars.rsl(audi);
     }
 }

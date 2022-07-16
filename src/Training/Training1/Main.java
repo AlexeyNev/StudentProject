@@ -2,10 +2,7 @@ package Training.Training1;
 
 import Training.Training3.Constructor;
 import Training.Training4.Bus;
-import Training.Training5.Birds;
-import Training.Training5.Straus;
-import Training.Training5.Tesst;
-import Training.Training5.Vorona;
+import Training.Training5.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -36,8 +33,9 @@ public class Main {
 
         Birds straus2 = new Straus();
         Birds voron = new Vorona();
+        Birds sova = new Sova();
 
         Tesst tesst = new Tesst();
-        tesst.foo(voron);
+        tesst.foo(sova);
     }
 }

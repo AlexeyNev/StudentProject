@@ -8,6 +8,10 @@ import Training.Training6.Weapon;
 import Training.Training7.Animal;
 import Training.Training7.Cat;
 import Training.Training7.Dog;
+import Training.Training8.Aircraft;
+import Training.Training8.Boeing737;
+import Training.Training8.Mi8;
+import Training.Training8.Test;
 
 public class Main {
     public static void main(String[] args) {
@@ -62,12 +66,20 @@ public class Main {
 //        Weapon weapon = new AK47();
 //        AK47 ak47 = new AK47();
 
-        Animal cat = new Cat();
-        Animal dog = new Dog();
+//        Animal cat = new Cat();
+//        Animal dog = new Dog();
+//
+//        cat.makeSound();
+//        cat.eat();
+//        dog.makeSound();
+//        dog.eat();
+        Mi8 mi8 = new Mi8();
+        Boeing737 boeing737 = new Boeing737();
 
-        cat.makeSound();
-        cat.eat();
-        dog.makeSound();
-        dog.eat();
+        Test test = new Test();
+        test.foo(mi8);
+        test.foo(boeing737);
+
+
     }
 }

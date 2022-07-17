@@ -3,6 +3,11 @@ package Training.Training1;
 import Training.Training3.Constructor;
 import Training.Training4.Bus;
 import Training.Training5.*;
+import Training.Training6.AK47;
+import Training.Training6.Weapon;
+import Training.Training7.Animal;
+import Training.Training7.Cat;
+import Training.Training7.Dog;
 
 public class Main {
     public static void main(String[] args) {
@@ -39,14 +44,30 @@ public class Main {
 //        Tesst tesst = new Tesst();
 //        tesst.foo(voron);
 
-        PremiumCar bmw = new Bmw();
-        PremiumCar mers = new Mers();
-        PremiumCar audi = new Audi();
-        PremiumCar car = new PremiumCar();
+//        PremiumCar bmw = new Bmw();
+//        PremiumCar mers = new Mers();
+//        PremiumCar audi = new Audi();
+//        PremiumCar car = new PremiumCar();
+//
+//        Cars cars = new Cars();
+//        cars.rsl(car);
+//        cars.rsl(mers);
+//        cars.rsl(audi);
+        /**
+          Не можем создать объект данного класса Weapon,
+          потому что абстрактный класс это всего лишь общее описание,
+          но от классов потомков мы можешь унаследоваться от абстрактного класса
+          (пример АК47)
+         */
+//        Weapon weapon = new AK47();
+//        AK47 ak47 = new AK47();
 
-        Cars cars = new Cars();
-        cars.rsl(car);
-        cars.rsl(mers);
-        cars.rsl(audi);
+        Animal cat = new Cat();
+        Animal dog = new Dog();
+
+        cat.makeSound();
+        cat.eat();
+        dog.makeSound();
+        dog.eat();
     }
 }

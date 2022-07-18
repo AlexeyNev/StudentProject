@@ -4,24 +4,31 @@ public class ClassesAndObjects {
     public static void main(String[] args) {
         Person max = new Person();
         max.age = 23;
-        max.name = "Макс";
+        max.setName("Макс");
         max.foo();
         Person vlad = new Person();
         vlad.age = 15;
         vlad.name = "Владик";
         vlad.foo();
+//
+//        Person alex = new Alex();
+//        alex.myName();
+//        alex.sayHello();
+//
+//        Person petr = new Petr();
+//        petr.myName();
+//
+//
+//        Person person = new Person();
+//        person.myName();
+//        person.foo();
 
-        Person alex = new Alex();
-        alex.myName();
-        alex.sayHello();
 
-        Person petr = new Petr();
-        petr.myName();
+//        int year1 = max.calculate();
+//        int year2 =  vlad.calculate();
+//        System.out.println(year1);
+//        System.out.println(year2);
 
-
-        Person person = new Person();
-        person.myName();
-        person.foo();
     }
 }
     class Person {
@@ -31,12 +38,22 @@ public class ClassesAndObjects {
         void foo() {
             System.out.println(name + " " + age);
         }
+//
+//        void myName() {
+//            System.out.println("Меня зовут");
+//        }
+//
+//        void sayHello() {
+//            System.out.println("Hello!");
+//        }
 
-        void myName() {
-            System.out.println("Меня зовут");
+        int calculate() {
+            int years;
+            years = 65 - age;
+            return years;
         }
 
-        void sayHello() {
-            System.out.println("Hello!");
+        void setName(String username) {
+            name = username;
         }
     }

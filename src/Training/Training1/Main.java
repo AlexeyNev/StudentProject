@@ -84,23 +84,25 @@ public class Main {
  * Клонирование объектов - нужно для того, чтобы мы могли при передачи ссылки на объект
  * работать с этим объектом ссылки
  */
-        DollySheap dollySheap = new DollySheap();
-        DollySheap dollySheap2 = foo(dollySheap);
+//        DollySheap dollySheap = new DollySheap();
+//        DollySheap dollySheap2 = foo(dollySheap);
+//
+//        dollySheap.setName("Dolly");
+//        dollySheap2.setName("Ovechka");
+//
+//        System.out.println(dollySheap.getName());
+//        System.out.println(dollySheap2.getName());
+//    }
+//
+////    public static DollySheap foo(DollySheap dollySheap2) {
+////        DollySheap sheap = null;
+////        try {
+////            sheap = (DollySheap)dollySheap2.clone();
+////        }   catch (CloneNotSupportedException e) {
+////            e.printStackTrace();
+////        }
+////        return dollySheap2;
+//    }
 
-        dollySheap.setName("Dolly");
-        dollySheap2.setName("Ovechka");
 
-        System.out.println(dollySheap.getName());
-        System.out.println(dollySheap2.getName());
-    }
-
-    public static DollySheap foo(DollySheap dollySheap2) {
-        DollySheap sheap = null;
-        try {
-            sheap = (DollySheap)dollySheap2.clone();
-        }   catch (CloneNotSupportedException e) {
-            e.printStackTrace();
-        }
-        return dollySheap2;
-    }
-}
+}}

@@ -12,6 +12,7 @@ import Training.Training8.Aircraft;
 import Training.Training8.Boeing737;
 import Training.Training8.Mi8;
 import Training.Training8.Test;
+import Training.Training9.DollySheap;
 
 public class Main {
     public static void main(String[] args) {
@@ -73,13 +74,33 @@ public class Main {
 //        cat.eat();
 //        dog.makeSound();
 //        dog.eat();
-        Mi8 mi8 = new Mi8();
-        Boeing737 boeing737 = new Boeing737();
+//        Mi8 mi8 = new Mi8();
+//        Boeing737 boeing737 = new Boeing737();
+//
+//        Test test = new Test();
+//        test.foo(mi8);
+//        test.foo(boeing737);
+/**
+ * Клонирование объектов - нужно для того, чтобы мы могли при передачи ссылки на объект
+ * работать с этим объектом ссылки
+ */
+        DollySheap dollySheap = new DollySheap();
+        DollySheap dollySheap2 = foo(dollySheap);
 
-        Test test = new Test();
-        test.foo(mi8);
-        test.foo(boeing737);
+        dollySheap.setName("Dolly");
+        dollySheap2.setName("Ovechka");
 
+        System.out.println(dollySheap.getName());
+        System.out.println(dollySheap2.getName());
+    }
 
+    public static DollySheap foo(DollySheap dollySheap2) {
+        DollySheap sheap = null;
+        try {
+            sheap = (DollySheap)dollySheap2.clone();
+        }   catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return dollySheap2;
     }
 }

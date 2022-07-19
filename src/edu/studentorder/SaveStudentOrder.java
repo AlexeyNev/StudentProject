@@ -17,10 +17,7 @@ package edu.studentorder;
  * архив файл. При компиляции и исполнении набор классов которые нужны может различаться.
  */
 
-import edu.studentorder.domain.Adress;
-import edu.studentorder.domain.Child;
-import edu.studentorder.domain.StudentOrder;
-import edu.studentorder.domain.AdultHuman;
+import edu.studentorder.domain.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -33,16 +30,6 @@ public class SaveStudentOrder {
 
     public static void main(String[] args) throws Exception {
 //        Class.forName("org.postgresql.Driver");
-        Connection con = DriverManager.getConnection(
-                "jdbc:postgresql://localhost:5432/jc_student",
-                "postgres", "As147846");
-
-        Statement statement = con.createStatement();
-        ResultSet rs = statement.executeQuery("SELECT * FROM jc_street");
-        while (rs.next()) {
-            System.out.println(rs.getLong(1) + " : " + rs.getString(2));
-        }
-
 //        StudentOrder s = buildStudentOrder(10);
 
     }
@@ -60,7 +47,9 @@ public class SaveStudentOrder {
         so.setMarriageDate(LocalDate.of(2016, 7, 4));
         so.setMarriageOffice("Отдел ЗАГС");
 
-        Adress adress = new Adress("195000", "Заневский пр.", "12", "", "142");
+        Street street = new Street(1L, "First street");
+
+        Adress adress = new Adress("195000", street, "12", "", "142");
 
 
         AdultHuman husband = new AdultHuman("Петров", "Виктор", "Сергеевич", LocalDate.of(1997, 8, 24));

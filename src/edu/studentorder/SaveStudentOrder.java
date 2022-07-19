@@ -11,6 +11,10 @@ package edu.studentorder;
  * garbage collector - механизм, который удаляет объекты на которые не идут ссылки, т.е механизм считает такой объект не активным.
  * поэтому стоит задумываться, создавать ли новые объекты или можно обойтись уже существующими.
  * Коллекции - это классы которые позволяют
+ * "jdbc:postgresql://localhost:5432/jc_student" - строка говорит о том, что я хочу
+ * присоедениться именно к постгрессу
+ * CLASSPATH - специальная структура, откуда JVM может брать классы. Может содержать как просто каталог, так и
+ * архив файл. При компиляции и исполнении набор классов которые нужны может различаться.
  */
 
 import edu.studentorder.domain.Adress;
@@ -18,13 +22,28 @@ import edu.studentorder.domain.Child;
 import edu.studentorder.domain.StudentOrder;
 import edu.studentorder.domain.AdultHuman;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.time.LocalDate;
 
 public class SaveStudentOrder {
     private static edu.studentorder.domain.Adress Adress;
 
-    public static void main(String[] args) {
-        StudentOrder s = buildStudentOrder(10);
+    public static void main(String[] args) throws Exception {
+//        Class.forName("org.postgresql.Driver");
+        Connection con = DriverManager.getConnection(
+                "jdbc:postgresql://localhost:5432/jc_student",
+                "postgres", "As147846");
+
+        Statement statement = con.createStatement();
+        ResultSet rs = statement.executeQuery("SELECT * FROM jc_street");
+        while (rs.next()) {
+            System.out.println(rs.getLong(1) + " : " + rs.getString(2));
+        }
+
+//        StudentOrder s = buildStudentOrder(10);
 
     }
 

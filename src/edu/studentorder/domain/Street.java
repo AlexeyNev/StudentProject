@@ -4,7 +4,7 @@ public class Street {
     private long streetCode;
     private String streetName;
 
-    public Street() {
+    public void Street() {
 
     }
 

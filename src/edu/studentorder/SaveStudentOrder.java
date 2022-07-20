@@ -17,6 +17,7 @@ package edu.studentorder;
  * архив файл. При компиляции и исполнении набор классов которые нужны может различаться.
  */
 
+import edu.studentorder.dao.DictionaryDaoImpl;
 import edu.studentorder.domain.*;
 
 import java.sql.Connection;
@@ -24,6 +25,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalDate;
+import java.util.List;
 
 public class SaveStudentOrder {
     private static edu.studentorder.domain.Adress Adress;
@@ -31,7 +33,10 @@ public class SaveStudentOrder {
     public static void main(String[] args) throws Exception {
 //        Class.forName("org.postgresql.Driver");
 //        StudentOrder s = buildStudentOrder(10);
-
+        List<Street> d = new DictionaryDaoImpl().findStreets("d");
+        for (Street s : d) {
+            System.out.println(s.getStreetName());
+        }
     }
 
     static long saveStudentOrder(StudentOrder studentOrder) {

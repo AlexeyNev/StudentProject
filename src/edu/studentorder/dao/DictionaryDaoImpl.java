@@ -1,5 +1,6 @@
 package edu.studentorder.dao;
 
+import edu.studentorder.config.Config;
 import edu.studentorder.domain.Street;
 import edu.studentorder.exception.DaoExeption;
 
@@ -13,8 +14,9 @@ public class DictionaryDaoImpl implements DictionaryDao {
 
     private Connection getConnection() throws SQLException {
         Connection con = DriverManager.getConnection(
-                "jdbc:postgresql://localhost/jc_student",
-                "postgres", "As147846");
+                Config.getProperty(Config.DB_URL),
+                Config.getProperty(Config.DB_LOGIN),
+                Config.getProperty(Config.DB_PASSWORD));
         return con;
     }
 

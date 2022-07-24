@@ -3,7 +3,7 @@ package edu.studentorder.validator;
 import edu.studentorder.domain.Child;
 import edu.studentorder.domain.register.CityRegisterResponce;
 import edu.studentorder.domain.Person;
-import edu.studentorder.domain.AdultHuman;
+import edu.studentorder.domain.Adult;
 import edu.studentorder.exception.CityRegisterException;
 import edu.studentorder.exception.TransportException;
 
@@ -28,8 +28,8 @@ public class FakeCityRegisterChecker implements CityRegisterChecker
 
         CityRegisterResponce res = new CityRegisterResponce();
 
-        if (person instanceof AdultHuman) {
-            AdultHuman t = (AdultHuman) person;
+        if (person instanceof Adult) {
+            Adult t = (Adult) person;
             String ps = t.getPassportSeria();
             if (ps.equals(GOOD_1) || ps.equals(GOOD_2)) {
                 res.setExisting(true);

@@ -21,10 +21,6 @@ package edu.studentorder;
 import edu.studentorder.dao.DictionaryDaoImpl;
 import edu.studentorder.domain.*;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -58,7 +54,7 @@ public class SaveStudentOrder {
         Adress adress = new Adress("195000", street, "12", "", "142");
 
 
-        AdultHuman husband = new AdultHuman("Петров", "Виктор", "Сергеевич", LocalDate.of(1997, 8, 24));
+        Adult husband = new Adult("Петров", "Виктор", "Сергеевич", LocalDate.of(1997, 8, 24));
         husband.setPassportSeria("" + (1000 + id));
         husband.setPassportNumber("" + (100000 + id));
         husband.setIssueDate(LocalDate.of(2017, 9, 15));
@@ -66,7 +62,7 @@ public class SaveStudentOrder {
         husband.setStudentId("" + (100000 + id));
         husband.setAdress(Adress);
 
-        AdultHuman wife = new AdultHuman("Петрова", "Вероника", "Алекссевна", LocalDate.of(1998, 3, 12));
+        Adult wife = new Adult("Петрова", "Вероника", "Алекссевна", LocalDate.of(1998, 3, 12));
         wife.setPassportSeria("" + (2000 + id));
         wife.setPassportNumber("" + (200000 + id));
         wife.setIssueDate(LocalDate.of(2018, 4, 5));

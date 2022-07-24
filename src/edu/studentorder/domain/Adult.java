@@ -1,6 +1,5 @@
 package edu.studentorder.domain;
 
-import edu.studentorder.domain.Person;
 import java.time.LocalDate;
 
 /**
@@ -13,47 +12,18 @@ import java.time.LocalDate;
  *
  */
 
-public class AdultHuman extends Person {
+public class Adult extends Person {
 
     private String passportSeria;
     private String passportNumber;
     private LocalDate issueDate;
-    private String issueDepartment;
+    private PassportOffice issueDepartment;
     private String university;
     private String studentId;
-    private String MarriageCertificateId;
-    private String MarriageDate;
-    private String MarriageOffice;
 
-    public String getMarriageCertificateId() {
-        return MarriageCertificateId;
-    }
-
-    public void setMarriageCertificateId(String marriageCertificateId) {
-        MarriageCertificateId = marriageCertificateId;
-    }
-
-    public String getMarriageDate() {
-        return MarriageDate;
-    }
-
-    public void setMarriageDate(String marriageDate) {
-        MarriageDate = marriageDate;
-    }
-
-    public String getMarriageOffice() {
-        return MarriageOffice;
-    }
-
-    public void setMarriageOffice(String marriageOffice) {
-        MarriageOffice = marriageOffice;
-    }
-
-    public AdultHuman(String surName, String givenName, String patronymic, LocalDate dateOfBirth) {
+    public Adult(String surName, String givenName, String patronymic, LocalDate dateOfBirth) {
         super(surName, givenName, patronymic, dateOfBirth);
     }
-
-
 
     public String getPassportSeria() {
         return passportSeria;
@@ -79,14 +49,6 @@ public class AdultHuman extends Person {
         this.issueDate = issueDate;
     }
 
-    public String getIssueDepartment() {
-        return issueDepartment;
-    }
-
-    public void setIssueDepartment(String issueDepartment) {
-        this.issueDepartment = issueDepartment;
-    }
-
     public String getUniversity() {
         return university;
     }
@@ -101,5 +63,13 @@ public class AdultHuman extends Person {
 
     public void setStudentId(String studentId) {
         this.studentId = studentId;
+    }
+
+    public PassportOffice getIssueDepartment() {
+        return issueDepartment;
+    }
+
+    public void setIssueDepartment(PassportOffice issueDepartment) {
+        this.issueDepartment = issueDepartment;
     }
 }

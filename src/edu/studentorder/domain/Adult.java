@@ -1,5 +1,7 @@
 package edu.studentorder.domain;
 
+import edu.studentorder.University;
+
 import java.time.LocalDate;
 
 /**
@@ -71,5 +73,8 @@ public class Adult extends Person {
 
     public void setIssueDepartment(PassportOffice issueDepartment) {
         this.issueDepartment = issueDepartment;
+    }
+
+    public void setUnivesity(University university) {
     }
 }

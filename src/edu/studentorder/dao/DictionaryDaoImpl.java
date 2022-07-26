@@ -14,13 +14,10 @@ public class DictionaryDaoImpl implements DictionaryDao
 {
     private static final String GET_STREET = "SELECT street_code, street_name " +
             "FROM jc_street WHERE UPPER(street_name) LIKE UPPER(?)";
-
     private static final String GET_PASSPORT = "SELECT * " +
             "FROM jc_passport_office WHERE p_office_area_id = ?";
-
     private static final String GET_REGISTER = "SELECT * " +
             "FROM jc_register_office WHERE r_office_area_id = ?";
-
     private static final String GET_AREA = "SELECT * " +
             "FROM jc_country_struct WHERE  area_id like ? and area_id <> ?";
 
@@ -32,6 +29,7 @@ public class DictionaryDaoImpl implements DictionaryDao
                 Config.getProperty(Config.DB_LOGIN),
                 Config.getProperty(Config.DB_PASSWORD));
         return con;
+
     }
 
     public List<Street> findStreets(String pattern) throws DaoException {

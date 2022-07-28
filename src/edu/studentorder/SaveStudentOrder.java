@@ -43,26 +43,6 @@ public class SaveStudentOrder
 //        for(RegisterOffice r : ro) {
 //            System.out.println(r.getOfficeName());
 //        }
-
-        List<CountryArea> ca1 = new DictionaryDaoImpl().findAreas("");
-        for (CountryArea c : ca1) {
-            System.out.println(c.getAreaId() + ":" + c.getAreaName());
-        }
-        System.out.println("--->");
-        List<CountryArea> ca2 = new DictionaryDaoImpl().findAreas("020000000000");
-        for (CountryArea c : ca2) {
-            System.out.println(c.getAreaId() + ":" + c.getAreaName());
-        }
-        System.out.println("--->");
-        List<CountryArea> ca3 = new DictionaryDaoImpl().findAreas("020010000000");
-        for (CountryArea c : ca3) {
-            System.out.println(c.getAreaId() + ":" + c.getAreaName());
-        }
-        System.out.println("--->");
-        List<CountryArea> ca4 = new DictionaryDaoImpl().findAreas("020010010000");
-        for (CountryArea c : ca4) {
-            System.out.println(c.getAreaId() + ":" + c.getAreaName());
-        }
 //        List<CountryArea> ca1 = new DictionaryDaoImpl().findAreas("");
 //        for (CountryArea c : ca1) {
 //            System.out.println(c.getAreaId() + ":" + c.getAreaName());
@@ -82,9 +62,6 @@ public class SaveStudentOrder
 //        for (CountryArea c : ca4) {
 //            System.out.println(c.getAreaId() + ":" + c.getAreaName());
 //        }
-
-
-//        StudentOrder s = buildStudentOrder(10);
         StudentOrder s = buildStudentOrder(10);
         StudentOrderDao dao = new StudentOrderDaoImpl();
         Long id = dao.saveStudentOrder(s);
@@ -128,7 +105,7 @@ public class SaveStudentOrder
         // Ребенок
         Child child1 = new Child("Петрова", "Ирина", "Викторовна", LocalDate.of(2018, 6, 29));
         child1.setCertificateNumber("" + (300000 + id));
-        child1.setIssueDate(LocalDate.of(2018, 7, 19));
+        child1.setIssueDate(LocalDate.of(2018, 6, 11));
         RegisterOffice ro2 = new RegisterOffice(2L, "", "");
         child1.setIssueDepartment(ro2);
         child1.setAdress(address);

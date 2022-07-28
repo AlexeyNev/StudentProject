@@ -19,6 +19,14 @@ public class Adress {
         this.apartment = apartment;
     }
 
+    public String getPostCode() {
+        return postCode;
+    }
+
+    public void setPostCode(String postCode) {
+        this.postCode = postCode;
+    }
+
     public Street getStreet() {
         return street;
     }
@@ -49,13 +57,5 @@ public class Adress {
 
     public void setApartment(String apartment) {
         this.apartment = apartment;
-    }
-
-    public String getPostCode() {
-        return postCode;
-    }
-
-    public void setPostCode(String postCode) {
-        this.postCode = postCode;
     }
 }

@@ -26,7 +26,6 @@ CREATE TABLE jc_country_struct
     area_name varchar(200),
     PRIMARY KEY (area_id)
 );
-
 CREATE TABLE jc_passport_office
 (
     p_office_id integer not null,
@@ -35,7 +34,6 @@ CREATE TABLE jc_passport_office
     PRIMARY KEY (p_office_id),
     FOREIGN KEY (p_office_area_id) REFERENCES jc_country_struct(area_id) ON DELETE RESTRICT
 );
-
 CREATE TABLE jc_register_office
 (
     r_office_id integer not null,
@@ -44,8 +42,6 @@ CREATE TABLE jc_register_office
     PRIMARY KEY (r_office_id),
     FOREIGN KEY (r_office_area_id) REFERENCES jc_country_struct(area_id) ON DELETE RESTRICT
 );
-
-
 CREATE TABLE jc_student_order
 (
     student_order_id SERIAL,
@@ -111,11 +107,6 @@ CREATE TABLE jc_student_child
     c_extension varchar(10),
     c_apartment varchar(10),
     PRIMARY KEY (student_child_id),
-    FOREIGN KEY (student_order_id) REFERENCES jc_student_order(student_order_id) ON DELETE RESTRICT,
     FOREIGN KEY (c_street_code) REFERENCES jc_street(street_code) ON DELETE RESTRICT,
     FOREIGN KEY (c_register_office_id) REFERENCES jc_register_office(r_office_id) ON DELETE RESTRICT
 );
-
-CREATE INDEX idx_student_order_status ON jc_student_order(student_order_status);
-
-CREATE INDEX idx_student_order_id ON jc_student_child(student_order_id);
